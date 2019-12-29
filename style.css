@@ -1,0 +1,31 @@
+body {
+  font-family: "Nunito", Arial, sans-serif;
+  color: #212529;
+  background-color: #fefefe;
+}
+
+.container {
+  display: grid;
+  grid: [main-start] "main" 80vh [main-end] [footer-start] "footer" auto [footer-end]/80%;
+  justify-content: center;
+}
+
+main {
+  grid-area: main;
+  justify-self: center;
+  align-self: center;
+}
+
+footer {
+  grid-area: footer;
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+}
+h1 input, .h1 input {
+  font-size: 2.5rem;
+  width: 10rem;
+}
+
+/*# sourceMappingURL=style.css.map */
