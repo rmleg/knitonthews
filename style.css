@@ -6,7 +6,7 @@ body {
 
 .container {
   display: grid;
-  grid: [main-start] "main" 80vh [main-end] [footer-start] "footer" auto [footer-end]/80%;
+  grid: [main-start] "main" 50vh [main-end] [answer-start] "answer" 30vh [answer-end] [footer-start] "footer" auto [footer-end]/80%;
   justify-content: center;
 }
 
@@ -16,8 +16,37 @@ main {
   align-self: center;
 }
 
+#answer {
+  grid-area: answer;
+}
+
 footer {
   grid-area: footer;
+}
+footer .fab {
+  margin: 0 3px;
+}
+
+a {
+  color: #445C4F;
+  text-decoration: none;
+  background-color: transparent;
+  border-bottom: 5px solid #D7DAE5;
+  line-height: 1.2em;
+  display: inline-block;
+  transition: all 0.15s;
+}
+
+a:hover {
+  border-bottom-color: #A6D8D4;
+  text-decoration: none;
+}
+
+span.social a {
+  border-bottom: none;
+}
+span.social a:hover {
+  color: #233029;
 }
 
 h1, .h1 {
@@ -26,6 +55,44 @@ h1, .h1 {
 h1 input, .h1 input {
   font-size: 2.5rem;
   width: 10rem;
+}
+
+button {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  background-color: #D7DAE5;
+  border-color: #D7DAE5;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+button:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(188, 191, 201, 0.5);
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+button:not(:disabled):active {
+  color: #212529;
+  background-color: #b8bdd1;
+  border-color: #b0b6cc;
+}
+button:hover {
+  color: #212529;
+  background-color: #c0c5d6;
+  border-color: #b8bdd1;
+}
+
+#find-out {
+  text-align: center;
+}
+
+.hide {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
