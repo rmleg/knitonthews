@@ -17,9 +17,28 @@ function handleChange() {
     abbrv.value ? p.classList.remove('hide') : p.classList.add('hide');
 }
 
+function findReverse(x) {
+    if (abbreviations[x]) {
+        return abbreviations[x];
+    }
+    else {
+        for (key in abbreviations) {
+            if (abbreviations[key] === x) {
+                return key;
+            }
+        }
+    }
+}
+
 function handleSubmit(e) {
     e.preventDefault();
-    console.log(abbrv.value);
+    const reverse = findReverse(abbrv.value);
+    if (reverse) {
+        console.log('something to show');
+    }
+    else {
+        console.log('do you want to suggest it');
+    }
 }
 
 abbrv.addEventListener('change', handleChange);
