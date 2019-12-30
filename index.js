@@ -10,11 +10,18 @@ const abbreviations = {
 
 const form = document.querySelector('form');
 const abbrv = form.querySelector('input');
-//const inputAbbrv = document.querySelector('.form-container input');
+const update = document.querySelector('#result');
 
 function handleChange() {
     const p = form.querySelector('#find-out');
-    abbrv.value ? p.classList.remove('hide') : p.classList.add('hide');
+    if (abbrv.value) {
+        p.classList.remove('hide');
+    }
+    else {
+        p.classList.add('hide');
+        update.innerHTML = '';
+        update.classList.remove('found');
+    }
 }
 
 function findReverse(x) {
@@ -34,10 +41,20 @@ function handleSubmit(e) {
     e.preventDefault();
     const reverse = findReverse(abbrv.value);
     if (reverse) {
-        console.log('something to show');
+        update.innerHTML = reverse;
+        update.classList.add('found');
     }
     else {
-        console.log('do you want to suggest it');
+        const emailLink = "mailto:rachel@arbortwist.com"
+            + '&subject=text';
+            /* + "&subject=" + `Add%20${abbrv.value}%20to%20knitonthe.ws`;
+            + "&body=" + `Could%20you%20add%20${abbrv.value}%20to%20knitonthe.ws?`; */
+        update.classList.remove('found');
+        update.innerHTML = `Not found.<br />
+            <a href="mailto:rachel@arbortwist.com?subject=Add ${abbrv.value} to knitonthe.ws
+                &body=Please add ${abbrv.value} to knitonthe.ws.">
+                Suggest "${abbrv.value}" 
+                as a new abbreviation?</a>`;
     }
 }
 

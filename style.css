@@ -4,13 +4,17 @@ body {
   background-color: #fefefe;
 }
 
+input {
+  font-family: "Nunito", Arial, sans-serif;
+}
+
 .container {
   display: grid;
   grid: [main-start] "main" 50vh [main-end] [answer-start] "answer" 30vh [answer-end] [footer-start] "footer" auto [footer-end]/80%;
   justify-content: center;
 }
 
-main {
+#form-container {
   grid-area: main;
   justify-self: center;
   align-self: center;
@@ -18,6 +22,14 @@ main {
 
 #answer {
   grid-area: answer;
+  justify-self: center;
+}
+
+#result {
+  font-size: 1.5rem;
+}
+#result.found {
+  font-size: 3.5rem;
 }
 
 footer {
@@ -25,6 +37,14 @@ footer {
 }
 footer .fab {
   margin: 0 3px;
+}
+
+.grow {
+  transition: all 0.2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
 }
 
 a {
