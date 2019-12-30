@@ -5,7 +5,16 @@ const abbreviations = {
     'k3tog': 'p3tog',
     'yo': 'yo',
     'sk2p': 'sp2p',
-    'sk2psso': 'sp2psso'
+    'sk2psso': 'sp2psso',
+    'ktbl': 'ptbl',
+    'k2togtbl': 'p2togtbl',
+    'kfb': 'pfb',
+    'm1r': 'm1rp',
+    'm1l': 'm1lp',
+    'm1': 'm1p',
+    's1k1psso': 's1p1psso',
+    'skp': 'spp',
+    'sl1k': 'sl1p'
 };
 
 const form = document.querySelector('form');
@@ -25,6 +34,7 @@ function handleChange() {
 }
 
 function findReverse(x) {
+    x = x.toLowerCase();
     if (abbreviations[x]) {
         return abbreviations[x];
     }
